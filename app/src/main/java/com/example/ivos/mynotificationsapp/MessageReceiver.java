@@ -1,15 +1,9 @@
 package com.example.ivos.mynotificationsapp;
 
 import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -85,6 +79,9 @@ public class MessageReceiver extends FirebaseMessagingService {
     }
 
     private void showNotifications(String title, String msg) {
+
+        Log.w(TAG, String.format("showNotifications - title: %s, body: %s", title, msg));
+
         Intent i = new Intent(this, MainActivity.class);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, REQUEST_CODE,
@@ -98,6 +95,7 @@ public class MessageReceiver extends FirebaseMessagingService {
                 .build();
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        assert manager != null;
         manager.notify(NOTIFICATION_ID, notification);
     }
 
