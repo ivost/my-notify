@@ -11,6 +11,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
+// FMS listener
 public class MessageReceiver extends FirebaseMessagingService {
 
     String TAG = "MY-APP";
@@ -43,7 +44,7 @@ public class MessageReceiver extends FirebaseMessagingService {
 
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-        Log.d(TAG, "From: " + remoteMessage.getFrom() + ", data: " + remoteMessage.getData().size());
+        Log.w(TAG, ">>>>>>>> MESSAGE From: " + remoteMessage.getFrom() + ", data: " + remoteMessage.getData().size());
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {

@@ -33,6 +33,7 @@ dependencies {
 
 
     def appCenterSdkVersion = '1.5.0'
+    implementation "com.microsoft.appcenter:appcenter-push:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 }
